@@ -6,8 +6,8 @@
     </head>
     <body>
         <h1>Rango says...</h1>
-        <div>
-            hey there partner! <br />
+        <div>Rango says hey there partner!
+            <br />
             <strong>{{ boldmessage }}</strong><br />
 
         </div>
@@ -15,10 +15,8 @@
         {% if categories %}
             <ul>
             {% for category in categories%}
-                    <li>
                     <!-- chapter 6 - The following line is changed to add an HTML hyperlink -->
-                    <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
-                    </li>
+                    <li><a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a></li>
             {% endfor %}
             </ul>
         {% else %}
@@ -36,12 +34,12 @@
                 {% endfor %}
             </ul>
         {% else %}
-            <strong>No pages are present.</strong>
+            <strong>There are no pages present.</strong>
         {% endif %}
         <div>
 
         <a href="/rango/about/">About</a><br />
-        <img src="{% static 'images/rango.jpeg' %}" alt="Picture of Rango" /> <!-- static file line -->
+        <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" /> <!-- static file line -->
         </div>
     </body>
 </html>
