@@ -9,9 +9,37 @@
         <div>
             hey there partner! <br />
             <strong>{{ boldmessage }}</strong><br />
-        </div>
 
+        </div>
+        <h2>Most Liked Categories</h2>
+        {% if categories %}
+            <ul>
+            {% for category in categories%}
+                    <li>
+                    <!-- chapter 6 - The following line is changed to add an HTML hyperlink -->
+                    <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
+                    </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+                <strong>There are no categories present.</strong>
+        {% endif %}
         <div>
+
+        <!-- chapter 6  ex -->
+        </div>
+        <h2>Most Viewed Pages</h2>
+        {% if pages %}
+            <ul>
+                {% for p in pages %}
+                <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>No pages are present.</strong>
+        {% endif %}
+        <div>
+
         <a href="/rango/about/">About</a><br />
         <img src="{% static 'images/rango.jpeg' %}" alt="Picture of Rango" /> <!-- static file line -->
         </div>
