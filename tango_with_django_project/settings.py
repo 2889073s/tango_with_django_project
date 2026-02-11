@@ -129,4 +129,5 @@ USE_TZ = True
 #http://127.0.0.1:8000/static/images/rango.jpg
 STATIC_URL = '/static/'
 
-
+#chapter 9
+LOGIN_URL = 'rango:login'
